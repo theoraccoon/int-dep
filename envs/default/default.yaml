@@ -13,7 +13,7 @@ spec:
       recurse: true
     path: envs/default
     targetRevision: main
-    repoURL: 
+    repoURL: https://github.com/theoraccoon/int-dep
   syncPolicy:
     automated:
       prune: true
