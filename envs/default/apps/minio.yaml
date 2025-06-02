@@ -9,9 +9,20 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: minio
     repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 18.9.1
+    chart: minio
+    targetRevision: 16.0.10
+    helm:
+      releaseName: minio
+      values: |
+        mode: standalone
+        auth:
+          rootUser: minioadmin
+          rootPassword: minioadmin
+        service:
+          type: NodePort
+        persistence:
+          enabled: false
   syncPolicy:
     automated:
       prune: true
